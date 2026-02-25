@@ -83,15 +83,6 @@ A cutting-edge web portfolio that combines modern web development with 3D graphi
 - 3D Earth model with drag-to-rotate interaction
 - Earth position animation on menu open
 
-### 🎨 UI Components
-
-- **Navbar**: Persistent navigation bar with section links, CV button, Connect button, and hamburger menu
-- **Menu**: Slide-in drawer with navigation and CV link
-- **Side Panel**: Fixed social links (LinkedIn, GitHub)
-- **CV Modal**: In-browser PDF viewer
-- **Popup Notifications**: Success/error messages for form submissions
-- **Responsive Modals**: Connect form, project details, image viewer
-
 ## 🛠 Tech Stack
 
 ### Core Technologies
@@ -125,6 +116,70 @@ A cutting-edge web portfolio that combines modern web development with 3D graphi
 
 - **Create React App** (5.0.1) - Build configuration
 - **source-map-explorer** - Bundle size analysis
+
+
+## 📸 Screenshots
+
+### Desktop Experience
+
+1. **Home Section** - Animated avatar with glitch text effect
+![1](https://github.com/user-attachments/assets/76a32617-7a8f-4da5-8e97-eb90ca856002)
+
+2. **Home Section (Menu Open)** - 3D avatar repositioning animation
+![2](https://github.com/user-attachments/assets/502694da-4c6a-4bcd-8508-da317a6b1328)
+
+3. **CV Modal** - In-browser PDF viewer
+![3](https://github.com/user-attachments/assets/f83e0b8e-f263-432b-a66a-b5e90b156a34)
+
+4. **Connect Modal** - Contact form with social links
+![4](https://github.com/user-attachments/assets/f4005b4c-9ecf-4367-a047-994a4075c95e)
+
+5. **About Me Section** - Avatar in 3D room environment
+![5](https://github.com/user-attachments/assets/bb65ff28-c57d-4b17-bbee-0f6a9fa1c6b4)
+
+6. **About Me (Menu Open)** - Room and avatar position changes
+![6](https://github.com/user-attachments/assets/019fa9cb-22ba-4781-9848-050b464c86df)
+
+7. **Skills Section** - Interactive 3D prisms with tech icons
+![7](https://github.com/user-attachments/assets/27ac2af1-1e8a-44f5-b505-f9aae341a13d)
+
+8. **Skills (Menu Open)** - Prisms rearrangement animation
+![8](https://github.com/user-attachments/assets/f2ddd4b5-c8f7-4730-b5d7-3935e873c667)
+
+9. **Projects Section** - Project cards with thumbnails and hashtags
+![9](https://github.com/user-attachments/assets/44315640-a215-4a85-9402-8a70da709ebb)
+
+10. **Project Modal** - Detailed view with image carousel
+![10](https://github.com/user-attachments/assets/af3e381b-3039-4c32-ab0e-7846f4d2daa2)
+
+11. **Full-Screen Image Viewer** - Carousel with navigation controls
+![11](https://github.com/user-attachments/assets/d8c4eb9b-4fab-4f7a-ad3d-a4051514ea5c)
+
+12. **Contact Section** - Form with interactive 3D Earth
+![12](https://github.com/user-attachments/assets/bf5de9eb-a5b5-49b6-8df3-db26f2177985)
+
+13. **Contact (Menu Open)** - Earth repositioning animation
+![13](https://github.com/user-attachments/assets/2e84fabc-40ce-4628-b0da-532133c5b274)
+
+### Mobile Experience
+
+_Responsive design adapts to all device sizes with optimized layouts and touch interactions._
+
+<p>
+  <img src="https://github.com/user-attachments/assets/8650116f-1c26-4d96-9836-95a0d4a47375" height="500" />
+  <img src="https://github.com/user-attachments/assets/69388bfc-c1e0-433b-a0a2-ca5be5dcf6ec" height="500" />
+  <img src="https://github.com/user-attachments/assets/952da028-c7f7-4d2a-8f15-45f5f78438a5" height="500" />
+</p>
+
+<p>
+  <img src="https://github.com/user-attachments/assets/e69e8936-4141-4d97-91b8-ebf83af35c01" height="500" />
+  <img src="https://github.com/user-attachments/assets/79de5ee0-8936-4545-a257-bd1cdfc365bd" height="500" />
+  <img src="https://github.com/user-attachments/assets/ba6153c4-a06e-43b7-b01e-5443a97ab1d3" height="500" />
+</p>
+
+<p>
+  <img src="https://github.com/user-attachments/assets/52aee256-3d88-4f55-a40b-6c4fe5e982e5" height="500" />
+</p>
 
 ## 📁 Project Structure
 
@@ -356,30 +411,6 @@ Example:
 }
 ```
 
-## 📸 Screenshots
-
-### Desktop Experience
-
-1. **Home Section** - Animated avatar with glitch text effect
-2. **Home Section (Menu Open)** - 3D avatar repositioning animation
-3. **CV Modal** - In-browser PDF viewer
-4. **Connect Modal** - Contact form with social links
-5. **About Me Section** - Avatar in 3D room environment
-6. **About Me (Menu Open)** - Room and avatar position changes
-7. **Skills Section** - Interactive 3D prisms with tech icons
-8. **Skills (Menu Open)** - Prisms rearrangement animation
-9. **Projects Section** - Project cards with thumbnails and hashtags
-10. **Project Modal** - Detailed view with image carousel
-11. **Full-Screen Image Viewer** - Carousel with navigation controls
-12. **Contact Section** - Form with interactive 3D Earth
-13. **Contact (Menu Open)** - Earth repositioning animation
-
-### Mobile Experience
-
-_Responsive design adapts to all device sizes with optimized layouts and touch interactions._
-
-> **Note**: Screenshots will be added to this section.
-
 ## 🎯 Performance Metrics
 
 - **First Contentful Paint**: Optimized with code splitting
@@ -398,7 +429,7 @@ This project is a personal portfolio created to showcase professional skills. Th
 **Alex Anackis**
 
 - 🌐 Portfolio: [alexanackis.com](https://www.alexanackis.com/)
-- 💼 LinkedIn: [linkedin.com/in/alex-anackis](https://linkedin.com/in/alex-anackis)
+- 💼 LinkedIn: [linkedin.com/in/alex-anackis](https://www.linkedin.com/in/aleksandrs-anackis-9831371a8)
 - 🐙 GitHub: [@anackis](https://github.com/anackis)
 
 ---

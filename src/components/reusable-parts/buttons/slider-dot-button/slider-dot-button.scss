@@ -1,0 +1,44 @@
+@import "../../../../styles/tokens";
+@import "../../../../styles/mixins";
+
+.slider-dot-button {
+  position: relative;
+  @include flex-center;
+  @include icon-size($size-icon-sm);
+  border-radius: 50%;
+  border: 2px solid $color-text;
+  background: transparent;
+  cursor: pointer;
+  @include neon-glow-inset(var(--slider-dot-accent-color));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  --slider-dot-accent-color: var(--color-primary-pink);
+}
+
+.slider-dot-button__sr-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.slick-dots li:hover .slider-dot-button {
+  transform: scale(1.1);
+  box-shadow: 0 0 1px $color-text, 0 0 2px $color-text,
+    0 0 5px var(--slider-dot-accent-color),
+    0 0 5px var(--slider-dot-accent-color),
+    0 0 10px var(--slider-dot-accent-color),
+    inset 0 0 5px var(--slider-dot-accent-color);
+}
+
+.slick-dots li:hover:active .slider-dot-button {
+  transform: scale(1);
+}
+
+.slick-dots li.slick-active .slider-dot-button {
+  background-color: $color-text;
+}

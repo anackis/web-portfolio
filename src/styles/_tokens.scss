@@ -1,0 +1,132 @@
+$font-family-base: "Roboto", sans-serif;
+$font-family-heading: "Bebas Neue", cursive;
+$font-family-mono: "Fira Mono", monospace;
+
+$font-size-base: 20px;
+$font-size-heading: 24px;
+
+// Primary colors //
+$color-primary-pink: #ff00ff;
+$color-primary-purple: #bc13fe;
+$color-primary-blue: #00ffff;
+
+// Accent colors //
+$color-accent-green: #00ff00;
+$color-accent-cyan: #03e9f4;
+$color-accent-cyan-alt: #00e6f6;
+$color-accent-cyan-light: #02e0f6;
+$color-accent-cyan-dark: #02e0f6;
+$color-accent-red: #ff0f3c;
+$color-accent-red-alt: #ff0058;
+$color-accent-yellow: #f9e80d;
+
+// Text colors //
+$color-text: #ffffff;
+$color-text-black: #000000;
+
+// Background colors //
+$color-bg-main: #4e54c8;
+$color-bg-panel: rgba(6, 6, 6, 0.7);
+$color-bg-overlay: rgba(0, 0, 0, 0.7);
+$color-bg-overlay-dark: rgba(0, 0, 0, 0.8);
+$color-bg-modal: #28292a;
+$color-bg-loading: #040d1c;
+
+// Gray scale //
+$color-gray-dark: #1e1e1e;
+$color-gray-medium: #2c2c2c;
+$color-gray-light: #323639;
+$color-gray-lighter: #383838;
+$color-gray-alt: #252526;
+
+// Scrollbar //
+$color-scrollbar: #bebfc2;
+
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-xxs-md: 10px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+$border-radius-xs: 5px;
+$border-radius-sm: 7px;
+$border-radius-md: 10px;
+$border-radius-lg: 14px;
+
+// Transitions //
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+$transition-slower: 0.6s ease;
+$transition-all-fast: all 0.2s ease;
+$transition-all-base: all 0.3s ease;
+$transition-all-slow: all 0.5s ease;
+$transition-all-slow-no-ease: all 0.5s;
+$transition-all-slower: all 0.7s ease-in-out;
+$transition-transform: transform 0.3s ease;
+$transition-opacity: opacity 0.3s ease;
+
+// Z-index layers //
+$z-index-base: 1;
+$z-index-nav: 100;
+$z-index-modal: 1000;
+$z-index-fullscreen: 2000;
+
+// Common sizes //
+$size-icon-sm: 20px;
+$size-icon-md: 24px;
+$size-icon-lg: 30px;
+$size-button-sm: 40px;
+$size-button-md: 45px;
+$size-button-lg: 50px;
+$size-nav-height: 80px;
+
+// Gradients //
+$gradient-primary: linear-gradient(
+  130deg,
+  rgb(5, 0, 253) 10%,
+  rgb(214, 0, 163) 85%
+);
+$gradient-primary-alt: linear-gradient(
+  148deg,
+  rgba(5, 0, 253, 1) 0%,
+  rgba(214, 0, 163, 1) 100%
+);
+$gradient-menu: linear-gradient(
+  96deg,
+  rgb(5, 0, 253) 10%,
+  rgb(214, 0, 163) 100%
+);
+
+$breakpoints: (
+  ultra: 1921px,
+  xxl: 1920px,
+  xl: 1700px,
+  lg: 1400px,
+  md: 1200px,
+  sm: 991px,
+  xs: 768px,
+  xxs: 650px,
+  xxxs: 550px,
+);
+
+:root {
+  // Primary colors //
+  --color-primary-pink: #{$color-primary-pink};
+  --color-primary-purple: #{$color-primary-purple};
+  --color-primary-blue: #{$color-primary-blue};
+
+  // Text colors //
+  --color-text: #{$color-text};
+
+  // Background colors //
+  --color-bg-main: #{$color-bg-main};
+
+  // Fonts //
+  --font-family-base: #{$font-family-base};
+  --font-family-heading: #{$font-family-heading};
+
+  --font-size-base: #{$font-size-base};
+}

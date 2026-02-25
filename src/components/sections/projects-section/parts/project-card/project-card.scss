@@ -1,0 +1,225 @@
+@import "../../../../../styles/mixins";
+@import "../../../../../styles/tokens";
+
+.projects-section {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs - 2px;
+    // height: 60vh;
+    height: 100%;
+    position: relative;
+    margin: $spacing-xxs-md;
+    padding: $spacing-xs - 2px;
+    border-radius: $border-radius-md;
+    background-color: $color-gray-dark;
+    transition: box-shadow $transition-fast;
+    overflow: hidden;
+
+    h3 {
+      font-size: 22px;
+      color: $color-text;
+    }
+
+    .projects-section__hashtags {
+      display: flex;
+      position: absolute;
+      bottom: 15px;
+      column-gap: $border-radius-sm;
+      flex-wrap: wrap;
+
+      @include hashtag-colors;
+
+      .hashtag_0,
+      .hashtag_1,
+      .hashtag_2 {
+        font-size: 19px;
+      }
+    }
+  }
+
+  &__card--pink:hover {
+    @include neon-glow-lg($color-primary-pink);
+  }
+
+  &__card--blue:hover {
+    @include neon-glow-lg($color-primary-blue);
+  }
+
+  &__card-media {
+    position: relative;
+    flex: 1;
+    padding: $spacing-xs - 2px;
+    border-radius: $spacing-xs;
+    overflow: hidden;
+    background-color: $color-gray-medium;
+  }
+
+  &__card-media-inner {
+    overflow: hidden;
+    border-radius: $spacing-xs - 2px;
+    height: 100%;
+  }
+
+  &__card-body {
+    flex: 1;
+    padding: 0 $spacing-xxs-md;
+    border-radius: $spacing-xs;
+    background-color: $color-gray-medium;
+  }
+
+  &__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+    margin-bottom: 2px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-sm;
+    flex-shrink: 0;
+    position: relative;
+    top: -20px;
+  }
+
+  &__card-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: scale $transition-slow;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  &__link {
+    @include button-square($size-button-lg);
+    background-color: $color-gray-lighter;
+    border-radius: $border-radius-md;
+    transition: $transition-all-base;
+
+    img {
+      height: 70%;
+      width: 70%;
+    }
+
+    &:hover {
+      background-color: $color-text;
+      transition: $transition-all-base;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+
+    &:hover img {
+      @include icon-filter-dark;
+    }
+  }
+
+  &__link--pink {
+    border: 2px solid var(--color-primary-pink);
+    @include neon-glow-sm(var(--color-primary-pink));
+  }
+
+  &__link--blue {
+    border: 2px solid var(--color-primary-blue);
+    @include neon-glow-sm(var(--color-primary-blue));
+  }
+
+  &__card-title {
+    line-height: $size-icon-lg;
+
+    &--pink {
+      @include neon-text-sm(var(--color-primary-pink));
+    }
+
+    &--blue {
+      @include neon-text-sm(var(--color-primary-blue));
+    }
+  }
+
+  // -- |Responsive styles| -- //
+  @include respond(lg, min) {
+    &__card {
+      width: 23%;
+      height: 38vh;
+    }
+  }
+
+  @include respond(lg) {
+    &__card {
+      margin: 0;
+      h3 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .projects-section__hashtags {
+        position: static;
+        margin-top: auto;
+        width: 100%;
+        padding-top: $spacing-xxs;
+      }
+    }
+
+    &__links {
+      bottom: 0;
+    }
+
+    &__card-body {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  @include respond(sm) {
+    .projects-section__card-header {
+      height: 45px;
+    }
+    .projects-section__links {
+      top: -25px;
+    }
+    &__card--pink:hover,
+    &__card--blue:hover {
+      box-shadow: none;
+    }
+
+    &__card-image {
+      transition: none;
+
+      &:hover {
+        scale: 1;
+      }
+    }
+  }
+
+  @include respond(xxl) {
+    &__card {
+      h3 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .projects-section__hashtags {
+        display: flex;
+        flex-wrap: wrap;
+        width: 92%;
+        bottom: 10px;
+      }
+    }
+  }
+}

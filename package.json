@@ -1,0 +1,58 @@
+{
+  "name": "portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@react-three/drei": "^9.74.16",
+    "@react-three/fiber": "^8.18.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^10.12.16",
+    "framer-motion-3d": "^10.12.16",
+    "leva": "^0.9.35",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.26.1",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.30.2",
+    "sass": "^1.63.4",
+    "slick-carousel": "^1.8.1",
+    "three": "^0.153.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "prestart": "copy /Y ..\\env-configs\\WebPorfolio\\.env.local .env.local",
+    "prebuild": "copy /Y ..\\env-configs\\WebPorfolio\\.env.local .env.local",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.13",
+    "source-map-explorer": "^2.5.3",
+    "typescript": "^4.9.5"
+  }
+}

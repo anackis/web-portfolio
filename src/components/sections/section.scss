@@ -1,0 +1,16 @@
+@import "../components/loading/loading.scss";
+@import "../components/menu/menu.scss";
+@import "../components/navbar/navbar.scss";
+@import "../components/side-panel/side-panel.scss";
+@import "../components/connect/connect.scss";
+
+@import "./projects-section/projects-section.scss";
+@import "./home-section/home-section.scss";
+@import "./skills-section/skills-section.scss";
+
+@import "../reusable-parts/content-blocks-section/content-blocks-section.scss";
+
+.interface-container__section {
+  width: 100vw;
+  position: relative;
+}

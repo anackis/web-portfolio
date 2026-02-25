@@ -1,0 +1,212 @@
+@use "sass:map";
+@import "./tokens";
+
+// Responsive breakpoints //
+@mixin respond($breakpoint, $direction: max) {
+  $value: map.get($breakpoints, $breakpoint);
+  @if $value {
+    @media only screen and (#{$direction}-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+// Glass panel effect //
+@mixin glass-panel($bg: $color-bg-panel, $blur: 8px) {
+  background: $bg;
+  backdrop-filter: blur($blur);
+}
+
+// Flex center //
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Neon box-shadow variants //
+@mixin neon-glow-sm($color) {
+  box-shadow:
+    0 0 1px $color-text,
+    0 0 5px $color;
+}
+
+@mixin neon-glow-md($color) {
+  box-shadow: 0 0 5px $color;
+  box-shadow: 0 0 10px $color;
+}
+
+@mixin neon-glow-md-white($color) {
+  box-shadow:
+    0 0 1px $color-text,
+    0 0 2px $color-text,
+    0 0 5px $color,
+    0 0 10px $color;
+}
+
+@mixin neon-glow-lg($color) {
+  box-shadow:
+    0 0 3px $color-text,
+    0 0 5px $color-text,
+    0 0 5px $color,
+    0 0 10px $color,
+    0 0 15px $color;
+}
+
+@mixin neon-glow-xl($color) {
+  box-shadow:
+    0 0 3px $color-text,
+    0 0 5px $color-text,
+    0 0 10px $color,
+    0 0 10px $color,
+    0 0 10px $color,
+    0 0 10px $color;
+}
+
+@mixin neon-glow-inset($color) {
+  box-shadow:
+    0 0 1px $color-text,
+    0 0 2px $color-text,
+    0 0 5px $color,
+    0 0 10px $color,
+    inset 0 0 5px $color;
+}
+
+// Neon text-shadow variants //
+
+// Subtle glow (Not too bright) //
+@mixin neon-text-sm($color) {
+  text-shadow:
+    0 0 5px $color,
+    0 0 10px $color;
+}
+
+// Common for glowing text //
+@mixin neon-text-md($color) {
+  text-shadow:
+    0 0 1px $color-text,
+    0 0 3px $color-text,
+    0 0 5px $color,
+    0 0 10px $color,
+    0 0 10px $color,
+    0 0 10px $color;
+}
+
+// For titles and headers //
+@mixin neon-text-lg($color) {
+  text-shadow:
+    0 0 4px $color-text,
+    0 0 2px $color,
+    0 0 5px $color,
+    0 0 10px $color;
+}
+
+@mixin neon-text-pressed($color) {
+  text-shadow:
+    0 0 1px $color-text,
+    0 0 3px $color-text,
+    0 0 5px $color,
+    0 0 5px $color,
+    0 0 5px $color,
+    0 0 10px $color;
+}
+
+// Slider dots (common for slick slider) //
+@mixin slider-dots($accent-color) {
+  .slick-dots {
+    bottom: -35px !important;
+    li {
+      margin: 0px 15px;
+      button {
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 100% !important;
+        border: 2px solid $color-text !important;
+        @include neon-glow-inset($accent-color);
+        opacity: 1 !important;
+        transition: all 0.25s;
+      }
+      button:before {
+        display: none;
+      }
+    }
+    li:hover button {
+      scale: 1.2 !important;
+      box-shadow:
+        0 0 1px $color-text,
+        0 0 1px $color-text,
+        0 0 10px $accent-color,
+        0 0 10px $accent-color,
+        0 0 10px $accent-color,
+        0 0 10px $accent-color,
+        inset 0 0 10px $accent-color !important;
+    }
+    li:hover button:active {
+      scale: 1 !important;
+    }
+    .slick-active button {
+      background-color: $color-text;
+    }
+  }
+}
+
+@mixin backdrop-overlay($bg: $color-bg-overlay, $z-index: $z-index-modal) {
+  position: absolute;
+  top: 0;
+  background-color: $bg;
+  height: 100vh;
+  width: 100vw;
+  z-index: $z-index;
+}
+
+@mixin modal-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin icon-size($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin button-square($size) {
+  @include icon-size($size);
+  @include flex-center;
+}
+
+@mixin hover-scale($scale: 1.1, $active-scale: 1) {
+  transition: transform $transition-base;
+  &:hover {
+    transform: scale($scale);
+  }
+  &:active {
+    transform: scale($active-scale);
+  }
+}
+
+@mixin icon-filter-dark {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(0%) saturate(0%)
+    hue-rotate(0deg) brightness(90%) contrast(90%);
+}
+
+@mixin hashtag-colors {
+  .hashtag_0 {
+    color: $color-primary-pink;
+  }
+  .hashtag_1 {
+    color: $color-primary-blue;
+  }
+  .hashtag_2 {
+    color: $color-accent-green;
+  }
+}

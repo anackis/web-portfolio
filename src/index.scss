@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Fira+Mono:400");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+@import "./styles/tokens";
+@import "./styles/mixins";
+
+html,
+body {
+  height: 100%;
+  background-color: var(--color-bg-main);
+}
+#root {
+  height: 100%;
+  background-color: var(--color-bg-main);
+}
+* {
+  font-family: var(--font-family-base);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  overscroll-behavior: none;
+  // outline: 2px solid red; // Testing
+}
+
+.fz-text {
+  font-size: 20px;
+
+  // -- |Responsive styles| -- //
+  @include respond(md) {
+    font-size: 16px;
+  }
+}
+
+.fz-header {
+  font-size: 24px;
+
+  // -- |Responsive styles| -- //
+  @include respond(md) {
+    font-size: 20px;
+  }
+
+  @include respond(xs) {
+    font-size: 18px;
+  }
+}
+button:hover {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.hidden {
+  display: none !important;
+}
+.show {
+  display: flex !important;
+}
+.scroll-fix {
+  position: absolute;
+  top: 0;
+}
+
+.section__header {
+  padding: $spacing-xxs 25px 2px 25px;
+  border-radius: $border-radius-md;
+  letter-spacing: 5px;
+  background-color: $color-bg-panel;
+  @include neon-text-lg($color-primary-pink);
+
+  // -- |Responsive styles| -- //
+  @include respond(md) {
+    margin-bottom: 5px;
+  }
+
+  @include respond(xxs) {
+    margin-bottom: 0;
+    line-height: unset;
+    padding: 7px 7px 4px 13px;
+  }
+}
+
+.section__header_text,
+.projects-section__title,
+.connect__section-title {
+  font-family: var(--font-family-heading);
+
+  // -- |Responsive styles| -- //
+  @include respond(ultra, min) {
+    font-size: 33px;
+  }
+
+  @include respond(xxl) {
+    font-size: 33px;
+  }
+}
+
+.block {
+  background: transparent;
+  z-index: $z-index-base;
+  background: $gradient-primary;
+  opacity: 0.9;
+}
+
+.bubble_wrap {
+  padding: 10px 15px;
+  border-radius: $border-radius-md;
+  background-color: $color-bg-panel;
+  line-height: 27px;
+  height: 90%;
+}
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg-main);
+  &-section0 {
+    background-image: url("./assets/bg/bg.webp");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &-section1 {
+    background-image: linear-gradient(
+      322deg,
+      rgba(78, 84, 200, 1) 20%,
+      rgba(96, 145, 186, 1) 67%,
+      rgba(96, 145, 186, 1) 100%
+    );
+    background-repeat: no-repeat;
+  }
+}

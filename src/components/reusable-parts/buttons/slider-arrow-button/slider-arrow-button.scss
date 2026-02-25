@@ -1,0 +1,67 @@
+@import "../../../../styles/tokens";
+@import "../../../../styles/mixins";
+
+.slider-arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  @include flex-center;
+  height: $size-button-sm;
+  width: 30px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  --slider-arrow-accent-color: var(--color-primary-pink);
+
+  &:focus-visible {
+    outline: 2px solid var(--slider-arrow-accent-color);
+    outline-offset: 2px;
+  }
+
+  &::before {
+    display: none;
+  }
+}
+
+.slider-arrow-button__chevron {
+  font-size: 50px;
+  line-height: 1;
+  color: $color-text;
+  font-family: $font-family-base;
+  text-shadow:
+    0 0 1px $color-text,
+    0 0 5px var(--slider-arrow-accent-color),
+    0 0 10px var(--slider-arrow-accent-color);
+  transition:
+    text-shadow $transition-fast,
+    transform 0.1s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .slider-arrow-button:hover .slider-arrow-button__chevron {
+    text-shadow:
+      0 0 1px $color-text,
+      0 0 2px $color-text,
+      0 0 5px var(--slider-arrow-accent-color),
+      0 0 10px var(--slider-arrow-accent-color),
+      0 0 10px var(--slider-arrow-accent-color);
+  }
+}
+
+.slider-arrow-button:active .slider-arrow-button__chevron {
+  @include neon-text-md(var(--slider-arrow-accent-color));
+  transform: scale(0.95);
+  transition:
+    text-shadow 0.1s ease,
+    transform 0.1s ease;
+}
+
+.slider-arrow-button--prev {
+  left: 0;
+}
+
+.slider-arrow-button--next {
+  right: 0;
+}

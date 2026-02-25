@@ -1,0 +1,91 @@
+@import "../../../styles/tokens";
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  padding: 13% 0 0 16%;
+  opacity: 0;
+  transform: translateY(200px);
+  transition:
+    transform 0.7s ease-out,
+    opacity 1s ease-out;
+
+  .home-main-text {
+    font-family: $font-family-mono !important;
+    font-size: 80px;
+    letter-spacing: -7px;
+  }
+
+  .home-submain-text-wrapper {
+    position: relative;
+    right: -4%;
+  }
+
+  .glitch {
+    font-size: 60px;
+  }
+
+  .glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: -2px 0 $color-primary-pink;
+    top: 0;
+  }
+
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -2px 0 $color-accent-green;
+    top: 0;
+  }
+
+  &--loaded,
+  &--visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  // -- |Responsive styles| -- //
+  @include respond(ultra, min) {
+    padding: 15% 0 0 16%;
+  }
+
+  @include respond(sm) {
+    padding: 13% 0 0 6%;
+
+    .glitch {
+      font-size: 50px;
+    }
+  }
+
+  @include respond(xs) {
+    padding: 23% 0 0 4%;
+
+    .home-main-text {
+      font-size: 45px;
+    }
+
+    .glitch {
+      font-size: 30px;
+
+      &::before {
+        left: -1px;
+      }
+
+      &::after {
+        left: 1px;
+      }
+    }
+  }
+
+  @include respond(xxxs) {
+    .home-submain-text-wrapper {
+      right: -8%;
+    }
+    .home-main-text {
+      margin-left: 10px;
+    }
+  }
+}

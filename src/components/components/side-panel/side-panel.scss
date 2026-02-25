@@ -1,0 +1,86 @@
+@import "../../../styles/mixins";
+
+.side-panel {
+  opacity: 0;
+  transition: $transition-all-slower;
+
+  &__content {
+    width: 370px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 45%;
+    left: -5%;
+    z-index: $z-index-nav;
+    transform: rotate(-90deg);
+  }
+
+  &__text {
+    cursor: default;
+    display: flex;
+    align-items: center;
+    padding-bottom: 2px;
+  }
+
+  &__divider {
+    width: 80px;
+    height: 0px;
+    border: 2px solid $color-text;
+    margin: auto 0;
+  }
+
+  &__icon {
+    @include icon-size($size-icon-sm);
+    @include flex-center;
+    border-radius: 100%;
+    transform: rotate(90deg);
+    transition: $transition-all-slow-no-ease;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &--github,
+    &--cv {
+      @include icon-size($size-icon-md);
+    }
+
+    &:hover {
+      scale: 1.3;
+      filter: drop-shadow(0 0 3px var(--color-primary-pink))
+        drop-shadow(0 0 5px var(--color-primary-pink));
+    }
+
+    &:active {
+      scale: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &--visible {
+    opacity: 1;
+  }
+
+  // -- |Responsive styles| -- //
+  @include respond(xl) {
+    &__content {
+      left: -7%;
+    }
+  }
+
+  @include respond(lg) {
+    &__content {
+      left: -10%;
+    }
+  }
+
+  @include respond(md) {
+    &__content {
+      display: none;
+    }
+  }
+}

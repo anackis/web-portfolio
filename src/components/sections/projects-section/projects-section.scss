@@ -1,0 +1,238 @@
+@import "../../../styles/tokens";
+@import "../../../styles/mixins";
+
+.projects-section {
+  z-index: $z-index-base;
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 95px 0 0 0;
+  p {
+    line-height: $font-size-heading;
+    margin-top: -$spacing-xxs;
+  }
+  &__cards-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+  &__tab-content {
+    height: 100%;
+  }
+  &__tabs {
+    height: 100%;
+  }
+  &__tabs-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $spacing-xxs;
+    &-block {
+      width: 30%;
+      @include flex-center;
+      gap: 30px;
+    }
+  }
+
+  .section__header {
+    width: auto;
+    border-radius: 8px;
+    background: rgba(1, 4, 25, 0.8);
+  }
+
+  .projects-section__title {
+    font-size: $font-size-heading;
+  }
+
+  &__tab-button {
+    padding: $spacing-xs;
+    border-radius: $border-radius-md;
+    transition: $transition-all-base;
+    border: none;
+    font-size: $font-size-base;
+    width: 200px;
+    background: $gradient-primary-alt;
+    &--primary {
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          @include neon-glow-md-white($color-primary-pink);
+        }
+      }
+      &:active {
+        @include neon-glow-lg($color-primary-pink);
+        transition: all 0.1s ease;
+      }
+      &.projects-section__tab-button--active {
+        @include neon-glow-md-white($color-primary-pink);
+        &:active {
+          @include neon-glow-lg($color-primary-pink);
+          transition: all 0.1s ease;
+        }
+      }
+    }
+    &--secondary {
+      background: $gradient-primary-alt;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          @include neon-glow-md-white($color-primary-blue);
+        }
+      }
+      &:active {
+        @include neon-glow-lg($color-primary-blue);
+        transition: all 0.1s ease;
+      }
+      &.projects-section__tab-button--active {
+        @include neon-glow-md-white($color-primary-blue);
+        &:active {
+          @include neon-glow-lg($color-primary-blue);
+          transition: all 0.1s ease;
+        }
+      }
+    }
+  }
+
+  &__slider-card {
+    height: 100%;
+  }
+
+  .slick-slider {
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .slick-list {
+    height: 100%;
+  }
+  .slick-track {
+    height: 100%;
+  }
+  .slick-slide {
+    height: 100%;
+    padding: $spacing-xxs-md;
+    > div {
+      height: 95% !important;
+    }
+  }
+
+  // -- |Responsive styles| -- //
+  @include respond(ultra, min) {
+    .section__header {
+      top: 7%;
+    }
+  }
+
+  @include respond(lg) {
+    .slick-dots {
+      bottom: 0;
+    }
+
+    .slider-arrow-button--prev {
+      left: -4%;
+    }
+
+    .slider-arrow-button--next {
+      right: -4%;
+    }
+
+    .slick-dots li {
+      width: 40px;
+    }
+  }
+
+  @include respond(sm) {
+    padding: 80px 0 0 0;
+
+    &__tabs-header {
+      justify-content: center;
+      gap: $spacing-md;
+    }
+
+    &__tab-button {
+      width: unset;
+      padding: 8px 15px;
+    }
+
+    &__tabs-header-block {
+      width: auto;
+    }
+
+    &__title-block {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: $size-nav-height;
+    }
+
+    &__title-block .section__header {
+      margin: 0;
+    }
+  }
+
+  @include respond(xs) {
+    .slick-initialized .slick-slide {
+      display: flex !important;
+      justify-content: center;
+    }
+
+    .slick-slide > div {
+      width: 80%;
+    }
+  }
+
+  @include respond(xxxs) {
+    .slick-initialized .slick-slide {
+      align-items: center;
+    }
+
+    .slick-slider {
+      width: 100%;
+    }
+
+    .projects-section__tab-content {
+      height: 90%;
+    }
+
+    .slick-list {
+      height: 102%;
+    }
+
+    .slider-arrow-button {
+      top: auto;
+      bottom: -50px;
+      transform: translateY(0);
+    }
+
+    .slick-slide > div {
+      width: 100%;
+      height: 100% !important;
+    }
+
+    .slider-arrow-button--prev {
+      left: 32%;
+    }
+
+    .slider-arrow-button--next {
+      right: 32%;
+    }
+
+    .projects-section__tabs-header {
+      gap: unset;
+    }
+
+    .projects-section__tabs-header-block {
+      gap: 10px;
+    }
+  }
+}
+.projects-section--visible {
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+}
+
+.projects-section--hidden {
+  opacity: 0;
+  transition: $transition-all-slow;
+}

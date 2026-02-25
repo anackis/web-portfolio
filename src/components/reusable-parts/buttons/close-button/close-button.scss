@@ -1,0 +1,62 @@
+@import "../../../../styles/tokens";
+@import "../../../../styles/mixins";
+
+.close-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: block;
+  @include icon-size($size-button-sm);
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: $z-index-modal;
+  --close-button-accent-color: var(--color-primary-pink);
+
+  &:hover .close-button__line {
+    background-color: $color-text;
+    border: 2px solid $color-text;
+    border-radius: $border-radius-md;
+    scale: 1.05;
+    @include neon-glow-lg(var(--close-button-accent-color));
+  }
+
+  &:active .close-button__line {
+    scale: 1.05;
+    @include neon-glow-xl(var(--close-button-accent-color));
+    transition: $transition-fast;
+  }
+}
+
+.close-button__line {
+  display: block;
+  margin: $spacing-xs 0;
+  background-color: $color-text-black;
+  height: 4px;
+  width: $size-button-sm;
+  transition: $transition-all-slow;
+  border: 2px solid $color-text;
+  border-radius: $border-radius-md;
+  box-shadow: 0 0 2px $color-text, 0 0 2px $color-text;
+
+  &--accent {
+    background-color: $color-text;
+    border: 2px solid $color-text;
+    border-radius: $border-radius-md;
+    @include neon-glow-lg(var(--close-button-accent-color));
+  }
+
+  &--rotate-45 {
+    transform: rotate(45deg);
+    position: relative;
+    top: 7px;
+    transition: $transition-all-slow;
+  }
+
+  &--rotate-minus-45 {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -5px;
+    transition: $transition-all-slow;
+  }
+}

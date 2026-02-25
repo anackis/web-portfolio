@@ -1,0 +1,16 @@
+@media only screen and (max-width: 999px) {
+  .skills-section.section-wrapper {
+    align-items: flex-end;
+  }
+
+  .skills-section .section-wrapper__panel--absolute {
+    width: 100%;
+    height: 65%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .skills-section .section-wrapper__panel--absolute {
+    height: 80%;
+  }
+}

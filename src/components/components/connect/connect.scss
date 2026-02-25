@@ -1,0 +1,363 @@
+@import "../../../styles/tokens";
+@import "../../../styles/mixins";
+
+.connect {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: $z-index-modal;
+  top: 0;
+  &__title {
+    margin-bottom: 2px;
+    cursor: default;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    top: 50%;
+    padding: $spacing-xs;
+    gap: $spacing-xxs-md;
+    border-radius: $border-radius-md;
+    background-color: $color-bg-modal;
+    transform: translate(20%, -50%);
+    align-items: stretch;
+    &--modal {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include neon-glow-md($color-primary-pink);
+      opacity: 1 !important;
+    }
+    .connect__close-button {
+      top: $spacing-xxs-md;
+      right: $spacing-xxs-md;
+    }
+  }
+  &__wrapper--visible {
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+  }
+  &__wrapper--hidden {
+    opacity: 0;
+    transition: opacity $transition-slow;
+  }
+  &__imgarea {
+    width: 100%;
+    max-width: 360px;
+    height: 100%;
+    align-self: stretch;
+    @include flex-center;
+    position: relative;
+    border-radius: $border-radius-sm;
+    z-index: 1;
+    background-color: $color-gray-dark;
+    overflow: hidden;
+  }
+  &__image {
+    position: relative;
+    border-radius: $border-radius-sm;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 1;
+    object-fit: cover;
+  }
+  &__image--mobile {
+    display: none;
+    border-radius: $border-radius-lg;
+  }
+  &__image--mobile-small {
+    display: none;
+    width: 150px;
+    border-radius: $border-radius-xs;
+  }
+  &__divider {
+    position: relative;
+    width: 100px;
+    height: 4px;
+    border: none !important;
+    background-color: transparent;
+  }
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-md;
+    width: 120px;
+    padding: $spacing-xs $spacing-xs 2px $spacing-xs;
+  }
+  &__social-link {
+    @include flex-center;
+    background: none;
+    border: none;
+  }
+  &__social-icon {
+    height: $size-icon-md;
+    transition: $transition-all-base;
+  }
+  &__social-icon--cv {
+    margin-top: 5px;
+    height: 31px;
+    width: 31px;
+    transition: $transition-all-base;
+  }
+  &__social-icon:hover,
+  &__social-icon--cv:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 2px var(--color-primary-pink))
+      drop-shadow(0 0 4px var(--color-primary-pink));
+  }
+  &__social-icon:active,
+  &__social-icon--cv:active {
+    transform: scale(1);
+  }
+  &__contacts {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    a {
+      letter-spacing: 1px;
+      color: $color-text;
+      padding: 2px 8px 2px 8px;
+      display: block;
+      transition: $transition-all-base;
+      &:hover {
+        @include neon-text-md($color-primary-pink);
+      }
+      &:active {
+        @include neon-text-pressed($color-primary-pink);
+      }
+    }
+  }
+  &__textarea {
+    position: relative;
+    background-color: $color-gray-dark;
+    border-radius: $border-radius-sm;
+    padding: $spacing-xxs-md;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+  }
+  &__textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+    line-height: 30px;
+  }
+  &__form {
+    overflow: visible;
+    max-width: 590px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 25px;
+  }
+  &__form-inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-md;
+    .connect__form-field {
+      width: 49%;
+    }
+  }
+  &__form-field {
+    overflow: visible !important;
+    position: relative;
+    width: 280px;
+    border-radius: $border-radius-sm;
+  }
+  &__form-control {
+    width: 100%;
+    border: none;
+    border-radius: $border-radius-sm;
+    background-color: transparent;
+    transition: $transition-all-base;
+    outline: none;
+  }
+  input.connect__form-control {
+    height: 45px;
+    padding-left: $spacing-md;
+  }
+  textarea.connect__form-control {
+    padding: $spacing-md;
+    height: 100%;
+    width: 100%;
+    resize: none;
+  }
+  .connect__form-control:hover {
+    @include neon-glow-sm($color-primary-pink);
+  }
+  .connect__form-control:focus {
+    @include neon-glow-md-white($color-primary-pink);
+  }
+  &__focus-container {
+    transition: $transition-all-base;
+    height: 100%;
+    label {
+      color: $color-text;
+      transition: $transition-all-base;
+      display: block;
+      position: absolute;
+      top: -31px;
+      left: -7px;
+      padding: 0 $spacing-xxs-md;
+    }
+    &:focus-within label {
+      @include neon-text-md($color-primary-pink);
+    }
+  }
+  &__form-text {
+    height: 200px;
+    width: 100%;
+    border-radius: $border-radius-sm;
+    resize: none;
+    margin-top: 40px;
+    background-color: transparent;
+  }
+  &__form-policy {
+    position: relative;
+    display: flex;
+    background-color: transparent;
+  }
+  &__submit-button {
+    position: relative;
+    margin-top: 15px;
+    width: 40%;
+    height: $size-button-md;
+    background-color: transparent;
+    border: none;
+    border-radius: $border-radius-sm;
+    transition: $transition-all-base;
+    outline: none;
+    @include flex-center;
+    gap: $spacing-xxs-md;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &__submit-button:hover:not(:disabled) {
+      @include neon-glow-sm($color-primary-pink);
+    }
+  }
+  &__submit-button:focus-visible:not(:disabled),
+  &__submit-button:active:not(:disabled) {
+    @include neon-glow-md-white($color-primary-pink);
+    transition: all 0.1s ease;
+  }
+  &__submit-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  &__spinner {
+    width: $size-icon-sm;
+    height: $size-icon-sm;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .connect__form-control::placeholder {
+    color: $color-text;
+  }
+
+  &--backdrop {
+    background-color: $color-bg-overlay-dark;
+  }
+
+  // -- |Responsive styles| -- //
+  @include respond(lg) {
+    &__wrapper:not(&__wrapper--modal) {
+      transform: translate(0%, -50%);
+      left: 1%;
+    }
+  }
+
+  @include respond(sm) {
+    &__wrapper:not(&__wrapper--modal) {
+      display: block;
+      position: absolute;
+      width: 98%;
+      top: unset;
+      bottom: 1%;
+      transform: unset;
+    }
+
+    &__textarea-header {
+      display: flex;
+      gap: 15px;
+    }
+
+    &__textarea-wrapper {
+      width: 100%;
+    }
+
+    &__submit-button {
+      width: 100%;
+    }
+
+    &__imgarea {
+      display: none;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__image--mobile-small {
+      display: block;
+    }
+
+    &__links {
+      padding: 8px 8px 6px 0px;
+    }
+
+    &__contacts a {
+      padding: 2px 8px 2px 0px;
+    }
+
+    &__form {
+      max-width: unset;
+      margin-top: 40px;
+    }
+
+    &__links {
+      justify-content: flex-start;
+      margin-top: 4px;
+    }
+
+    &__contacts {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include respond(xs) {
+    &__social-link--cv {
+      display: none;
+    }
+  }
+
+  @include respond(xxxs) {
+    .connect__textarea-header {
+      gap: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 390px) {
+    .connect__image--mobile-small {
+      display: none;
+    }
+
+    .connect__textarea-header {
+      gap: 0px;
+    }
+  }
+}

@@ -1,0 +1,285 @@
+@import "../../../styles/tokens";
+@import "../../../styles/mixins";
+
+.hamburger {
+  z-index: $z-index-nav + 1;
+  display: block;
+  height: $size-button-sm;
+  width: $size-button-sm;
+  position: absolute !important;
+  top: 20px;
+  right: $size-button-sm;
+  background-color: transparent;
+  border: none;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover &__line {
+      background-color: $color-text;
+      border-radius: $border-radius-md;
+      scale: 1.1;
+      @include neon-glow-lg($color-primary-pink);
+    }
+  }
+  &__line {
+    display: block;
+    margin: $spacing-xs 0;
+    background-color: $color-text;
+    height: 4px;
+    width: $size-button-sm;
+    transition: all 0.5s;
+    border: 2px solid $color-text;
+    border-radius: $border-radius-md;
+    box-shadow:
+      0 0 2px $color-text,
+      0 0 2px $color-text;
+    &--highlighted {
+      background-color: $color-text;
+      border: 2px solid $color-text;
+      border-radius: $border-radius-md;
+      box-shadow:
+        0 0 1px $color-text,
+        0 0 1px $color-text,
+        0 0 10px $color-primary-purple,
+        0 0 10px $color-primary-purple,
+        0 0 25px $color-primary-purple,
+        0 0 10px $color-primary-purple;
+    }
+
+    &--rotate-45 {
+      transform: rotate(45deg);
+      position: relative;
+      top: $border-radius-sm;
+      transition: all 0.5s;
+    }
+
+    &--rotate-minus-45 {
+      transform: rotate(-45deg);
+      position: relative;
+      top: -5px;
+      transition: all 0.5s;
+    }
+  }
+}
+
+.menu {
+  width: 17%;
+  height: 100%;
+  @include flex-center;
+  position: fixed;
+  padding: 4px 0 4px 4px;
+  top: 0;
+  right: 0;
+  z-index: $z-index-nav;
+  transition: all 0.6s;
+  background: $gradient-menu;
+  opacity: 0.9;
+  border-radius: $border-radius-md 0 0 $border-radius-md;
+
+  &--hidden {
+    right: -100% !important;
+    transition: all 1s;
+  }
+
+  &__neon-text {
+    height: 6%;
+    width: 74%;
+    @include flex-center;
+    color: $color-text;
+    border: 2px solid $color-text;
+    border-radius: $border-radius-sm;
+    box-shadow:
+      0 0 10px $color-primary-purple,
+      0 0 10px $color-primary-purple,
+      0 0 10px $color-primary-purple;
+    margin: 0;
+    transition: all 2s;
+  }
+
+  &__link {
+    font-family: $font-family-heading;
+    letter-spacing: 3px;
+    font-size: 23px;
+    cursor: pointer;
+    background-color: transparent;
+    opacity: 0;
+    margin-bottom: $spacing-xl;
+    transition:
+      opacity 1s ease-in-out,
+      text-shadow 0.3s ease,
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
+    &--visible {
+      opacity: 1;
+    }
+
+    &:hover {
+      transition: all 0.2s ease-in-out;
+      @include neon-glow-lg($color-primary-pink);
+    }
+
+    &:active {
+      transition: all 0.3s ease;
+      box-shadow:
+        0 0 10px $color-primary-purple,
+        0 0 10px $color-primary-purple,
+        0 0 10px $color-primary-purple;
+      @include neon-text-md($color-primary-pink);
+    }
+
+    &.active {
+      @include neon-text-md($color-primary-pink);
+    }
+  }
+
+  &__panel {
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 75px;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    border-radius: $border-radius-sm;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    @include respond(xxxs) {
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  &__socials {
+    margin: 0px 0px 20px 0px;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+
+    button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      @include flex-center;
+      cursor: pointer;
+    }
+  }
+
+  &__social-icon {
+    opacity: 0;
+    height: $size-icon-lg;
+    filter: drop-shadow(0 0 5px $color-primary-purple)
+      drop-shadow(0 0 7px $color-primary-purple);
+    transition:
+      opacity 1s ease-in-out,
+      transform 0.3s;
+    will-change: transform, opacity;
+
+    &--visible {
+      opacity: 1;
+    }
+
+    &--linkedin {
+      height: 28px;
+      width: 28px;
+    }
+
+    &--cv {
+      height: 34px;
+      width: 34px;
+    }
+
+    &:hover {
+      transform: scale(1.15) translateZ(0);
+      filter: drop-shadow(0 0 3px $color-primary-pink)
+        drop-shadow(0 0 5px $color-primary-pink);
+    }
+
+    &:active {
+      transform: scale(1.1) translateZ(0);
+    }
+  }
+
+  &__divider {
+    opacity: 0;
+    width: 70%;
+    height: 4px;
+    background-color: $color-text;
+    border-radius: $border-radius-md;
+    border: 2px solid $color-text;
+    box-shadow:
+      0 0 1px $color-text,
+      0 0 1px $color-text,
+      0 0 10px $color-primary-purple,
+      0 0 10px $color-primary-purple,
+      0 0 25px $color-primary-purple;
+    transition: all 1s ease-in-out;
+
+    &--visible {
+      opacity: 1;
+    }
+  }
+
+  &__contacts {
+    height: 60px;
+    @include flex-center;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    &--visible {
+      opacity: 1;
+    }
+    a {
+      letter-spacing: 2px;
+      color: $color-text;
+      transition: $transition-all-fast;
+      @include neon-text-md($color-primary-purple);
+      &:hover {
+        @include neon-text-md($color-primary-pink);
+      }
+      &:active {
+        @include neon-text-pressed($color-primary-pink);
+      }
+    }
+  }
+
+  // -- |Responsive styles| -- //
+  @include respond(md) {
+    width: 30%;
+  }
+
+  @include respond(sm) {
+    .menu__panel {
+      padding-top: 80px;
+    }
+
+    .menu__link {
+      height: 50px;
+    }
+  }
+
+  @include respond(xs) {
+    width: 50%;
+
+    &__socials {
+      width: unset;
+      gap: 30px;
+
+      .menu__cv-button {
+        display: none;
+      }
+    }
+  }
+
+  @include respond(xxxs) {
+    width: 100%;
+    border-radius: 0;
+    padding: 4px 4px 4px 4px;
+  }
+}
+
+.hamburger {
+  @include respond(xs) {
+    right: 30px;
+  }
+}

@@ -1,0 +1,113 @@
+@import "../../../styles/tokens";
+@import "../../../styles/mixins";
+
+.content-blocks-section {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: $transition-opacity;
+
+  &--visible {
+    opacity: 1;
+  }
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  .section-wrapper__panel {
+    background: $gradient-primary;
+    opacity: 0.95;
+  }
+
+  &__bubble {
+    height: 100%;
+    min-height: 0;
+    max-height: calc(100dvh - 160px);
+    overflow: hidden;
+    padding: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+
+    .scrollable-text {
+      flex: 1 1 auto;
+      min-height: 0;
+      height: 100%;
+      max-height: none;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-right: 4px;
+
+      &::-webkit-scrollbar {
+        display: block;
+        width: 8px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $color-bg-panel;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $color-scrollbar;
+        box-shadow: 0 0 6px $color-scrollbar;
+        transition:
+          background 0.3s ease,
+          box-shadow 0.3s ease;
+        &:hover {
+          background: lighten($color-scrollbar, 10%);
+          box-shadow: 0 0 10px $color-scrollbar;
+        }
+      }
+
+      scrollbar-width: thin;
+      scrollbar-color: $color-scrollbar $color-bg-panel;
+    }
+  }
+
+  .bubble_wrap {
+    height: 100%;
+  }
+
+  &__block {
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    background-color: $color-bg-panel;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__block-title,
+  &__block-text {
+    display: block;
+  }
+
+  &__block-title {
+    font-weight: 600;
+  }
+
+  &__block-text {
+    padding-left: 8px;
+    margin-bottom: 2px;
+  }
+
+  // -- |Responsive styles| -- //
+  @include respond(xxl) {
+    &__block-text {
+      overscroll-behavior: none;
+    }
+  }
+
+  @include respond(xs) {
+    &__block-title {
+      font-size: 18px;
+    }
+
+    &__block-text {
+      font-size: 16px;
+    }
+  }
+}

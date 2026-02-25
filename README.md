@@ -168,15 +168,16 @@ _Responsive design adapts to all device sizes with optimized layouts and touch i
 <p>
   <img src="https://github.com/user-attachments/assets/8650116f-1c26-4d96-9836-95a0d4a47375" height="500" />
   <img src="https://github.com/user-attachments/assets/69388bfc-c1e0-433b-a0a2-ca5be5dcf6ec" height="500" />
-  <img src="https://github.com/user-attachments/assets/952da028-c7f7-4d2a-8f15-45f5f78438a5" height="500" />
+  
 </p>
-
 <p>
-  <img src="https://github.com/user-attachments/assets/e69e8936-4141-4d97-91b8-ebf83af35c01" height="500" />
+  <img src="https://github.com/user-attachments/assets/952da028-c7f7-4d2a-8f15-45f5f78438a5" height="500" />
+    <img src="https://github.com/user-attachments/assets/e69e8936-4141-4d97-91b8-ebf83af35c01" height="500" />
+</p>
+<p>
   <img src="https://github.com/user-attachments/assets/79de5ee0-8936-4545-a257-bd1cdfc365bd" height="500" />
   <img src="https://github.com/user-attachments/assets/ba6153c4-a06e-43b7-b01e-5443a97ab1d3" height="500" />
 </p>
-
 <p>
   <img src="https://github.com/user-attachments/assets/52aee256-3d88-4f55-a40b-6c4fe5e982e5" height="500" />
 </p>

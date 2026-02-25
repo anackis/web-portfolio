@@ -39,7 +39,6 @@ export const projects1: ProjectData[] = [
     title: "Web 3D Portfolio",
     thumbnail: webPortfolioThumb,
     imgs: webPortfolioImages,
-    link: "https://www.alexanackis.com/",
     linkGitHub: "https://github.com/anackis/Portfolio_V3",
     description:
       "Web 3D portfolio featuring interactive Three.js scenes with scroll-based animations and responsive design.",

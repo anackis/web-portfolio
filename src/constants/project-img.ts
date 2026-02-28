@@ -12,8 +12,8 @@ import heroesThumb from "assets/projectsImg/thumbnails/heroes-thumb.webp"
 import blogThumb from "assets/projectsImg/thumbnails/blog-thumb.webp"
 import adminPanelThumb from "assets/projectsImg/thumbnails/admin-panel-thumb.webp"
 import foodThumb from "assets/projectsImg/thumbnails/food-thumb.webp"
-import losangelesMountainsThumb from "assets/projectsImg/thumbnails/losangelesMountains-thumb.webp"
-import formThumb from "assets/projectsImg/thumbnails/form-thumb.webp"
+import pineappleThumb from "assets/projectsImg/thumbnails/pineapple-thumb.webp"
+import templateThumb from "assets/projectsImg/thumbnails/template-thumb.webp"
 
 export {
   foodAppThumb,
@@ -30,8 +30,8 @@ export {
   adminPanelThumb,
   foodThumb,
   productlistThumb,
-  losangelesMountainsThumb,
-  formThumb,
+  pineappleThumb,
+  templateThumb,
 }
 
 export const foodAppImages: string[] = [
@@ -118,14 +118,14 @@ export const productListImages: string[] = [
   "/projectsImg/productlist3.webp",
 ]
 
-export const losAngelesMountainsImages: string[] = [
-  "/projectsImg/losangelesMountains1.webp",
-  "/projectsImg/losangelesMountains2.webp",
-  "/projectsImg/losangelesMountains3.webp",
+export const pineappleImages: string[] = [
+  "/projectsImg/pineapple1.webp",
+  "/projectsImg/pineapple2.webp",
+  "/projectsImg/pineapple3.webp",
 ]
 
-export const formImages: string[] = [
-  "/projectsImg/form1.webp",
-  "/projectsImg/form2.webp",
-  "/projectsImg/form1.webp",
+export const templateImages: string[] = [
+  "/projectsImg/template-1.webp",
+  "/projectsImg/template-2.webp",
+  "/projectsImg/template-3.webp",
 ]

@@ -13,8 +13,6 @@ import {
   adminPanelThumb,
   blogThumb,
   productlistThumb,
-  losangelesMountainsThumb,
-  formThumb,
   artGalleryImages,
   clipitImages,
   foodAppImages,
@@ -29,8 +27,10 @@ import {
   adminPanelImages,
   blogImages,
   productListImages,
-  losAngelesMountainsImages,
-  formImages,
+  pineappleThumb,
+  pineappleImages,
+  templateThumb,
+  templateImages,
 } from "./project-img"
 import { ProjectData } from "types/projects"
 
@@ -45,6 +45,18 @@ export const projects1: ProjectData[] = [
     description_detailed:
       "A cutting-edge portfolio web application that combines React, TypeScript, and Three.js to create an immersive 3D experience. Built with React Three Fiber and Framer Motion 3D, the app features five interactive sections (Home, About, Skills, Projects, Contact) with smooth scroll-based transitions and adaptive 3D scene layouts. The 3D environment includes an animated avatar, room interior, rotating Earth model, and floating technology icons rendered from GLB models. Implements custom camera animations that respond to user interactions, intelligent scroll manager with touch/swipe support for mobile devices, and responsive breakpoints for optimal viewing across all screen sizes. Features lazy-loaded modals for CV display, project details with full-screen image galleries, and a fully functional contact form integrated with Web3Forms API. The architecture leverages Context API for global state management, custom React hooks for complex animations and scene layouts, and SCSS modular styling. Performance-optimized with conditional rendering, adjustable DPR (device pixel ratio), and minimum loading time management to ensure smooth 60fps experience.",
     hashtags: ["#React", "#Three.js", "#TypeScript"],
+  },
+  {
+    title: "React Frontend Template",
+    thumbnail: templateThumb,
+    imgs: templateImages,
+    link: "https://keeper-9ac3e.web.app/",
+    linkGitHub: "https://github.com/anackis/frontend-template-public",
+    description:
+      "React template with advanced theming ,MUI material, draggable dashboard, backend logic and user management system.",
+    description_detailed:
+      "React frontend template engineered to accelerate web application development. Built with React 18, TypeScript 5.8, Vite 7, and Material-UI 7, it provides a complete foundation covering authentication, data persistence, UI customization, and internationalization. Firebase integration covers the full backend stack: email/password authentication via Cloud Functions with display name validation, Firestore for public and private user profile storage, Firebase Storage for avatar uploads, and callable serverless functions for secure data mutations. The advanced theming system supports dynamic light/dark mode switching and real-time primary color customization — including a custom color picker with eyedropper support — with preferences persisted to localStorage for guests and Firestore for authenticated users. The interactive dashboard is powered by React Grid Layout featuring drag-and-drop repositioning, resizable widgets across 5 responsive breakpoints (lg/md/sm/xs/xxs), collision prevention, and layout persistence via localStorage with debounced writes. Multi-language support (English and Latvian) is implemented via i18next with smart persistence: language preference is saved to Firestore for logged-in users and localStorage for guests. Account management includes a tabbed settings page (Profile, Security, Account Actions), avatar upload with browser-side image compression and react-easy-crop cropping dialog, and public/private info editing with reauthentication guards. The global dialog system uses Context API with a promise-based API to drive Confirm, Error, Status, and Login modals from anywhere in the app. Navigation consists of a top navbar, collapsible left sidebar with grouped navigation items, and a right customizer sidebar. All forms use React Hook Form with Zod schema validation. Architecture leverages four Context providers (User, Dialog, UI, Style) for global state, custom hooks encapsulating Firebase logic, SCSS modular styling, and route-based code splitting with lazy loading for optimal bundle size.",
+    hashtags: ["#React", "#TypeScript", "#MUI"],
   },
   {
     title: "Art Gallery",
@@ -107,19 +119,6 @@ export const projects1: ProjectData[] = [
     hashtags: ["#React", "#Firebase"],
   },
   {
-    title: "Marvel",
-    thumbnail: marvelThumb,
-    imgs: marvelImages,
-    link: "http://test2.alexanackis.com/#",
-    linkGitHub: "https://github.com/anackis/Marvel-Wiki",
-    description:
-      "This is Marvell wiki with connection to Marvel Api for searching Marvell characters information.",
-    description_detailed:
-      "This is Marvell wiki with connection to Marvel Api for searching Marvell characters information.",
-    hashtags: ["#React", "#API", "#FSM"],
-  },
-
-  {
     title: "Run Smart",
     thumbnail: runsmartThumb,
     imgs: runsmartImages,
@@ -146,6 +145,18 @@ export const projects2: ProjectData[] = [
     hashtags: ["#React", "#EmailJs", "#Responsive"],
   },
   {
+    title: "Marvel",
+    thumbnail: marvelThumb,
+    imgs: marvelImages,
+    // link: "http://test2.alexanackis.com/#",
+    linkGitHub: "https://github.com/anackis/Marvel-Wiki",
+    description:
+      "Marvell wiki build with Marvel Api. Currently API was closed and no more available.",
+    description_detailed:
+      "Marvell wiki build with Marvel Api. Currently API was closed and no more available.",
+    hashtags: ["#React", "#API", "#FSM"],
+  },
+  {
     title: "Heroes Creator",
     thumbnail: heroesThumb,
     imgs: heroesImages,
@@ -155,6 +166,15 @@ export const projects2: ProjectData[] = [
     description_detailed:
       "Creation form with filter for practicing Redux and Json Server.",
     hashtags: ["#React", "#Redux", "#JsonServer"],
+  },
+  {
+    title: "Pineapple",
+    thumbnail: pineappleThumb,
+    imgs: pineappleImages,
+    linkGitHub: "https://github.com/anackis/Junior-Mid-recruiting-task",
+    description: "This is recruiting task. Form page with validation.",
+    description_detailed: "This is recruiting task. Form page with validation.",
+    hashtags: ["#React", "#PixelPerfect", "#Formik+Yup"],
   },
   {
     title: "Web Food",
@@ -199,26 +219,5 @@ export const projects2: ProjectData[] = [
     description_detailed:
       "This is recruiting task. Products list with admin panel.",
     hashtags: ["#React", "#PHP", "#MySql"],
-  },
-  {
-    title: "L.A. Mountains",
-    thumbnail: losangelesMountainsThumb,
-    imgs: losAngelesMountainsImages,
-    linkGitHub:
-      "https://github.com/anackis/Losangeles_mountains-Junior-Recruiting_Test-",
-    description:
-      "This is recruiting task. Landing page about Los Angeles Mountains.",
-    description_detailed:
-      "This is recruiting task. Landing page about Los Angeles Mountains.",
-    hashtags: ["#React", "#ReactHooks", "#Sass"],
-  },
-  {
-    title: "Form",
-    thumbnail: formThumb,
-    imgs: formImages,
-    linkGitHub: "https://github.com/anackis/Small-Form-Example-",
-    description: "Form for practicing Formik, Yup and own validation.",
-    description_detailed: "Form for practicing Formik, Yup and own validation.",
-    hashtags: ["#Formik", "#Yup ", "#OwnValidation"],
   },
 ]
